@@ -10,7 +10,6 @@ setup(
     description='Repository for academic and research contributions to OpenFL',
     packages=find_packages(),
     include_package_data=True,
-    setup_requires=["setuptools"],
     install_requires=[
         'openfl @ git+https://github.com/securefederatedai/openfl.git@develop',
     ],
