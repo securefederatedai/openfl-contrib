@@ -1,0 +1,20 @@
+aggregated_model_validation:
+  function : validate_task
+  kwargs   :
+    apply   : global
+    metrics :
+      - acc
+  
+locally_tuned_model_validation:
+  function  : validate_task
+  kwargs    :
+    apply: local
+    metrics :
+      - acc
+  
+train:
+  function : train_task
+  kwargs   :
+    metrics     :
+    - loss
+    epochs : 1
