@@ -40,7 +40,12 @@ assigner :
   
 tasks :
   defaults : plan/defaults/tasks_torch.yaml
-  train :
+  train:
+    function : train_task
+    kwargs   :
+      metrics     :
+      - loss
+      epochs : 1
     aggregation_type :
       template : openfl_contrib.interface.aggregation_functions.Median  
 
