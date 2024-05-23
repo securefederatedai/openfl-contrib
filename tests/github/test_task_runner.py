@@ -10,7 +10,7 @@ from subprocess import check_call
 from concurrent.futures import ProcessPoolExecutor
 
 from openfl.utilities.utils import rmtree
-from tests.github.utils import create_collaborator, create_certified_workspace, certify_aggregator
+from tests.github.utils import create_collaborator, initialize_and_certify_workspace, certify_aggregator
 
 
 if __name__ == '__main__':
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     # START
     # =====
     # Make sure you are in a Python virtual environment with the FL package installed.
-    create_certified_workspace(workspace, fqdn, rounds_to_train)
+    initialize_and_certify_workspace(workspace, fqdn, rounds_to_train)
     certify_aggregator(fqdn)
 
     workspace_root = Path().resolve()  # Get the absolute directory path for the workspace

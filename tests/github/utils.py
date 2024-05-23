@@ -46,7 +46,7 @@ def create_collaborator(col, workspace_root, data_path, archive_name, fed_worksp
     )
 
 
-def create_certified_workspace(path, fqdn, rounds_to_train):
+def initialize_and_certify_workspace(path, fqdn, rounds_to_train):
     path = os.path.join('openfl_contrib_workspace', path)
     os.chdir(path)
 
