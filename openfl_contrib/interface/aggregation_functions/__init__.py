@@ -3,17 +3,6 @@
 
 """Aggregation functions package."""
 
-from .adagrad_adaptive_aggregation import AdagradAdaptiveAggregation
-from .adam_adaptive_aggregation import AdamAdaptiveAggregation
-from .fedcurv_weighted_average import FedCurvWeightedAverage
-from .geometric_median import GeometricMedian
 from .median import Median
-from .yogi_adaptive_aggregation import YogiAdaptiveAggregation
 
-__all__ = ['Median',
-           'GeometricMedian',
-           'AdagradAdaptiveAggregation',
-           'AdamAdaptiveAggregation',
-           'YogiAdaptiveAggregation',
-           'AggregationFunction',
-           'FedCurvWeightedAverage']
+__all__ = ['Median']
