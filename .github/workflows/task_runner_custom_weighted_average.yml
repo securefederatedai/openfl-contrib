@@ -35,4 +35,4 @@ jobs:
         pip install .
     - name: Test Task Runner API
       run: |
-        python -m tests.github.test_task_runner --workspace torch_cnn_mnist_median_agg --col1 col1 --col2 col2  --rounds-to-train 3
+        python -m tests.github.test_task_runner --workspace torch_cnn_mnist_custom_weighted_average --col1 col1 --col2 col2  --rounds-to-train 3

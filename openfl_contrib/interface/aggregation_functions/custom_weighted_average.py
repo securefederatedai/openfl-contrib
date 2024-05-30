@@ -1,15 +1,15 @@
 # Copyright (C) 2020-2023 Intel Corporation
 # SPDX-License-Identifier: Apache-2.0
 
-"""Median module."""
+"""Custom Federated averaging module."""
 
 import numpy as np
 
 from openfl.interface.aggregation_functions.core import AggregationFunction
 
 
-class Median(AggregationFunction):
-    """Median aggregation."""
+class CustomWeightedAverage(AggregationFunction):
+    """Weighted average aggregation."""
 
     def call(self, local_tensors, *_) -> np.ndarray:
         """Aggregate tensors.
@@ -38,5 +38,8 @@ class Median(AggregationFunction):
         Returns:
             np.ndarray: aggregated tensor
         """
-        tensors = np.array([x.tensor for x in local_tensors])
-        return np.median(tensors, axis=0)
+        tensors, weights = zip(*[(x.tensor, x.weight) for x in local_tensors])
+
+        total_weight = sum(weights)
+        weighted_sum = np.sum([tensor * weight for tensor, weight in zip(tensors, weights)], axis=0)
+        return weighted_sum / total_weight

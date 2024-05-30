@@ -3,6 +3,8 @@
 
 """Aggregation functions package."""
 
-from .median import Median
+from .custom_weighted_average import CustomWeightedAverage
 
-__all__ = ['Median']
+__all__ = [
+    'CustomWeightedAverage'
+    ]

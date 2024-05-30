@@ -47,7 +47,7 @@ tasks :
       - loss
       epochs : 1
     aggregation_type :
-      template : openfl_contrib.interface.aggregation_functions.Median  
+      template : openfl_contrib.interface.aggregation_functions.CustomWeightedAverage  
 
 compression_pipeline :
   defaults : plan/defaults/compression_pipeline.yaml
