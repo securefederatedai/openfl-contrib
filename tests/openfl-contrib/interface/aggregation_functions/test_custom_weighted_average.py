@@ -10,6 +10,7 @@ from openfl.utilities.types import TensorKey
 
 from openfl_contrib.interface.aggregation_functions.custom_weighted_average import CustomWeightedAverage
 
+
 @pytest.fixture
 def tensor_db():
     """Prepare tensor db."""

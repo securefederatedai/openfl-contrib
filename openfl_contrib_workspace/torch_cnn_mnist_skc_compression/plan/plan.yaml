@@ -44,3 +44,5 @@ tasks :
 compression_pipeline :
   defaults : plan/defaults/compression_pipeline.yaml
   template: openfl_contrib.pipelines.SKCPipeline
+  settings:
+    n_clusters : 2
