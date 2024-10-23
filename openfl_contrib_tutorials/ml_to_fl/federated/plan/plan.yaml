@@ -27,13 +27,13 @@ compression_pipeline:
   settings: {}
   template: openfl.pipelines.NoCompressionPipeline
 data_loader:
-  template: src.dataloader.TemplateDataLoader
   settings:
     batch_size: 64
+  template: src.dataloader.TemplateDataLoader
 network:
   settings:
     agg_addr: localhost
-    agg_port: 59588
+    agg_port: 59583
     cert_folder: cert
     client_reconnect_interval: 5
     disable_client_auth: false
@@ -48,12 +48,18 @@ tasks:
     function: validate_task
     kwargs:
       apply: global
+      metrics:
+      - acc
   locally_tuned_model_validation:
     function: validate_task
     kwargs:
       apply: local
+      metrics:
+      - acc
   settings: {}
   train:
     function: train_task
     kwargs:
       epochs: 1
+      metrics:
+      - loss

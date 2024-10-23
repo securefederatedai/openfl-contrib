@@ -21,4 +21,4 @@ if __name__ == '__main__':
     train(model, optimizer, loss_fn, train_data_loader, epochs=1)
     acc = validate(model, test_data_loader)
 
-    print(f"Digit recognizer accuracy: {acc}")
+    print(f"Digit recognizer accuracy after centralized training: {acc}")
