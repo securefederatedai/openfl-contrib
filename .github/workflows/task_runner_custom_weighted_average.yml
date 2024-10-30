@@ -5,7 +5,7 @@ name: Task Runner with Median Aggregation
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ main ]
 
 permissions:
   contents: read

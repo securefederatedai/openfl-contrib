@@ -5,7 +5,7 @@ name: Task Runner with SKC Compression
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ main ]
 
 permissions:
   contents: read
