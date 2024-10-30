@@ -9,7 +9,7 @@ from pathlib import Path
 from subprocess import check_call
 from concurrent.futures import ProcessPoolExecutor
 
-from openfl.utilities.utils import rmtree
+from openfl.utilities.utils import rmtree, getfqdn_env
 from tests.github.utils import create_collaborator, initialize_and_certify_workspace, certify_aggregator
 
 
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     workspace = args.workspace
     archive_name = f'{workspace}.zip'
-    fqdn = socket.getfqdn()
+    fqdn = getfqdn_env()
     rounds_to_train = args.rounds_to_train
     col1, col2 = args.col1, args.col2
     col1_data_path, col2_data_path = args.col1_data_path, args.col2_data_path

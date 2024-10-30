@@ -5,7 +5,7 @@ name: Check code format
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ main ]
 
 permissions:
   contents: read
