@@ -1,5 +1,5 @@
 # Copyright (C) 2024 Intel Corporation
-# Licensed subject to the terms of the separately executed evaluation license agreement between Intel Corporation and you.
+# SPDX-License-Identifier: Apache-2.0
 
 from setuptools import setup, find_packages
 
