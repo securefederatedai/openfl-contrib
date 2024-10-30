@@ -7,10 +7,8 @@ import copy as co
 import gzip as gz
 
 import numpy as np
+from openfl.pipelines.pipeline import TransformationPipeline, Transformer
 from sklearn import cluster
-
-from openfl.pipelines.pipeline import TransformationPipeline
-from openfl.pipelines.pipeline import Transformer
 
 
 class SparsityTransformer(Transformer):

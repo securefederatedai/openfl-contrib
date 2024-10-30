@@ -4,7 +4,6 @@
 """Custom Federated averaging module."""
 
 import numpy as np
-
 from openfl.interface.aggregation_functions.core import AggregationFunction
 
 
@@ -41,7 +40,5 @@ class CustomWeightedAverage(AggregationFunction):
         tensors, weights = zip(*[(x.tensor, x.weight) for x in local_tensors])
 
         total_weight = sum(weights)
-        weighted_sum = np.sum(
-            [tensor * weight for tensor, weight in zip(tensors, weights)], axis=0
-        )
+        weighted_sum = np.sum([tensor * weight for tensor, weight in zip(tensors, weights)], axis=0)
         return weighted_sum / total_weight
