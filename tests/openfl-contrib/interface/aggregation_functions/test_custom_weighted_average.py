@@ -8,7 +8,7 @@ import numpy as np
 from openfl.databases.tensor_db import TensorDB
 from openfl.utilities.types import TensorKey
 
-from openfl_contrib.interface.aggregation_functions.custom_weighted_average import CustomWeightedAverage
+from openfl_contrib.interface.aggregation_functions import CustomWeightedAverage
 
 
 @pytest.fixture
