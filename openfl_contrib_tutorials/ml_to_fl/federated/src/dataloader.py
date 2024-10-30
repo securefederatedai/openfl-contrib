@@ -70,7 +70,7 @@ def load_dataset(data_path, train_split_ratio=0.8, **kwargs):
     # Implement dataset loading logic here and return the appropriate data.
     # Replace the following placeholders with actual data loading code.
     dataset = MNISTDataset(
-        root=data_path, 
+        root=data_path,
         transform=Compose([Grayscale(num_output_channels=1), ToTensor()])
     )
     n_train = int(train_split_ratio * len(dataset))

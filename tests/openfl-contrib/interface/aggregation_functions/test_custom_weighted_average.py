@@ -30,7 +30,7 @@ def test_get_aggregated_tensor_weights(tensor_db):
     """Test that get_aggregated_tensor calculates correctly."""
 
     collaborator_weight_dict = {
-        'col1': 0.9, 
+        'col1': 0.9,
         'col2': 0.1
         }
 

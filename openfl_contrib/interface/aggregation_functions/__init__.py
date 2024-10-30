@@ -3,4 +3,6 @@
 
 """Aggregation functions package."""
 
-from openfl_contrib.interface.aggregation_functions.custom_weighted_average import CustomWeightedAverage
+from openfl_contrib.interface.aggregation_functions.custom_weighted_average import (
+    CustomWeightedAverage,
+)

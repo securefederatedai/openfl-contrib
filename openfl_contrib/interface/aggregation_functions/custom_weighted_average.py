@@ -4,7 +4,6 @@
 """Custom Federated averaging module."""
 
 import numpy as np
-
 from openfl.interface.aggregation_functions.core import AggregationFunction
 
 
