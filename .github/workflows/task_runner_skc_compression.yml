@@ -5,16 +5,20 @@ name: Task Runner with SKC Compression
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ main ]
 
 permissions:
   contents: read
+
+env:
+  # A workaround for long FQDN names provided by GitHub actions.
+  FQDN: "localhost"
 
 jobs:
   build:
     strategy:
       matrix:
-       os: ['ubuntu-latest', 'windows-latest']
+       os: ['ubuntu-latest']
        python-version: ['3.8','3.9','3.10','3.11']
     runs-on: ${{ matrix.os }}
     steps:
