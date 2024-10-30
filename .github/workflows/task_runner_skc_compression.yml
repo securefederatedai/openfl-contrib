@@ -1,0 +1,38 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Task Runner with SKC Compression
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+       os: ['ubuntu-latest', 'windows-latest']
+       python-version: ['3.8','3.9','3.10','3.11']
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies ubuntu
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        python -m pip install --upgrade pip
+        pip install .
+    - name: Install dependencies windows
+      if: matrix.os == 'windows-latest'
+      run: |
+        python -m pip install --upgrade pip
+        pip install .
+    - name: Test Task Runner API
+      run: |
+        python -m tests.github.test_task_runner --workspace torch_cnn_mnist_skc_compression --col1 col1 --col2 col2  --rounds-to-train 3
