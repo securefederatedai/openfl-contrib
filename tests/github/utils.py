@@ -5,7 +5,6 @@ from subprocess import check_call
 import os
 from pathlib import Path
 import re
-import tarfile
 
 
 def create_collaborator(col, workspace_root, data_path, archive_name, fed_workspace):
