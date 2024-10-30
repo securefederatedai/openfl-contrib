@@ -3,8 +3,4 @@
 
 """Aggregation functions package."""
 
-from .custom_weighted_average import CustomWeightedAverage
-
-__all__ = [
-    'CustomWeightedAverage'
-    ]
+from openfl_contrib.interface.aggregation_functions.custom_weighted_average import CustomWeightedAverage
