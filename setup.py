@@ -13,5 +13,5 @@ setup(
     install_requires=[
         'openfl @ git+https://github.com/securefederatedai/openfl.git@develop',
     ],
-    python_requires='>=3.8, <3.12'
+    python_requires='>=3.10, <3.13'
 )

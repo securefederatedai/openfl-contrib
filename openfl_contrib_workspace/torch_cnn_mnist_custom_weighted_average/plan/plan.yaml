@@ -8,10 +8,7 @@ aggregator :
     init_state_path     : save/torch_cnn_mnist_init.pbuf
     best_state_path     : save/torch_cnn_mnist_best.pbuf
     last_state_path     : save/torch_cnn_mnist_last.pbuf
-    rounds_to_train     : 10
-    log_metric_callback :
-      template : src.utils.write_metric
-
+    rounds_to_train     : 5
 
 collaborator :
   defaults : plan/defaults/collaborator.yaml
