@@ -49,8 +49,8 @@ def initialize_and_certify_workspace(path, fqdn, rounds_to_train):
     path = os.path.join('openfl_contrib_workspace', path)
     os.chdir(path)
 
-    ("save").mkdir(exist_ok=True)
-    ("local_state").mkdir(exist_ok=True)
+    (Path('save')).mkdir(exist_ok=True)
+    (Path('local_state')).mkdir(exist_ok=True)
 
     check_call(['pip', 'install', '-r', 'requirements.txt'])
 
