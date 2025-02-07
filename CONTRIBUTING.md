@@ -7,7 +7,8 @@ We welcome contributions from the community. There are several ways to contribut
 * Contributing to OpenFL-contrib's code-base via bug-fixes or feature additions.
 * Participating in the upstream OpenFL's [roadmap](https://github.com/securefederatedai/openfl/blob/develop/ROADMAP.md) discussions.
 
-We have a slack [channel](https://join.slack.com/t/openfl/shared_invite/zt-ovzbohvn-T5fApk05~YS_iZhjJ5yaTw) and we host regular [community meetings](https://github.com/securefederatedai/openfl#support).
+Join the [\#openfl-contrib channel](https://join.slack.com/t/openfl/shared_invite/zt-ovzbohvn-T5fApk05~YS_iZhjJ5yaTw) in the OpenFL slack to get in touch quickly with the development and maintainer team. We are happy to answer questions and provide guidance if you're interested in contributing to a particular area. If you want to ask a question live, we host monthly [community meetings](https://github.com/securefederatedai/openfl#support) on Zoom.
+
 
 
 ## How to contribute code
