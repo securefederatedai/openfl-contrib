@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: openfl-contrib
+Version: 0.1.0
+Summary: Repository for academic and research contributions to OpenFL
+Author: The OpenFL Contributors
+Requires-Python: >=3.10, <3.13
+License-File: LICENSE
+Requires-Dist: openfl@ git+https://github.com/securefederatedai/openfl.git@develop
