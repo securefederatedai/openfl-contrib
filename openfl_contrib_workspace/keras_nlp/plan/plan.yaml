@@ -15,7 +15,7 @@ collaborator :
   template : openfl.component.Collaborator
   settings :
     db_store_rounds: 2
-    delta_updates    : false
+    use_delta_updates    : false
     opt_treatment    : RESET
 
 data_loader :
