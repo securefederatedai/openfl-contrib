@@ -38,13 +38,13 @@ pip install -e .
 
 This repository is organized into several directories, each serving a specific purpose. Here's a brief overview to help you navigate:
 
-- **openfl_contrib**: This directory mirrors the core OpenFL source files and is intended for framework-level contributions. If you're looking to extend or modify the OpenFL framework itself, this is where your contributions should reside.
+- **[openfl_contrib](./openfl_contrib)**: This directory mirrors the core OpenFL source files and is intended for framework-level contributions. If you're looking to extend or modify the OpenFL framework itself, this is where your contributions should reside.
 
-- **openfl_contrib_tutorials**: A flexible space for community tutorials. Whether you're sharing a simple example or a comprehensive guide, this directory is designed to host tutorials that help users understand and utilize OpenFL and its contrib features.
+- **[openfl_contrib_tutorials](./openfl_contrib_tutorials)**: A flexible space for community tutorials. Whether you're sharing a simple example or a comprehensive guide, this directory is designed to host tutorials that help users understand and utilize OpenFL and its contrib features.
 
-- **openfl_contrib_workspace**: Contains workspaces that can be run with OpenFL's TaskRunner. These workspaces are set up for federated learning experiments and can be customized to fit various use cases. For more information on TaskRunner, refer to the [TaskRunner documentation](https://openfl.readthedocs.io/en/latest/about/features_index/taskrunner.html).
+- **[openfl_contrib_workspace](./openfl_contrib_workspace)**: Contains workspaces that can be run with OpenFL's TaskRunner. These workspaces are set up for federated learning experiments and can be customized to fit various use cases. For more information on TaskRunner, refer to the [TaskRunner documentation](https://openfl.readthedocs.io/en/latest/about/features_index/taskrunner.html).
 
-- **research**: Intended for researchers to host their work. This directory provides a space for sharing experimental code, datasets, and results related to federated learning research.
+- **[research](./research)**: Intended for researchers to host their work. This directory provides a space for sharing experimental code, datasets, and results related to federated learning research.
 
 For detailed information on how to contribute to each section, please refer to the contributing guidelines.
 
