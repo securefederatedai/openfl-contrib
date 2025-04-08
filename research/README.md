@@ -4,6 +4,6 @@ Welcome to the OpenFL Contrib Research Directory! This space is dedicated to res
 
 ## Table of Contents
 
-- [Template](./research/template)
+- [Template](./template)
 
 Feel free to explore the directories and contribute your own research projects. If you have any questions or need assistance, please reach out to the OpenFL community. We look forward to seeing your contributions!
