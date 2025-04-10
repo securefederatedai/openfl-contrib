@@ -79,6 +79,30 @@ We recommend setting up a local dev environment. Clone your forked repo to your 
 ```shell
 git clone https://github.com/YOUR_GITHUB_USERNAME/openfl-contrib.git
 cd openfl-contrib
-pip install -U pip setuptools wheel
-pip install .
-pip install -r linters-requirements.txt
+git checkout -b <your-branch-name>
+```
+
+## Code Style
+
+OpenFL uses [ruff](https://github.com/astral-sh/ruff) to lint/format code and [precommit](https://pre-commit.com/) checks. Run the following command at the **root** directory of the repo to format your code:
+
+```shell
+pip install -r requirements-linters.txt
+sh scripts/format.sh
+```
+
+You may need to resolve errors that could not be resolved by autoformatting. To only show lint errors, run sh scripts/lint.sh at the root directory of the repo.
+
+
+## Docstrings
+
+Since docstrings cannot be verified programmatically, if you do write/edit a docstring, make sure to check them manually. OpenFL docstrings should follow the conventions below:
+
+A **class** or a **function** docstring may contain:
+
+- A one-line description of the class/function.
+- Paragraph(s) of detailed information.
+- Usage examples wherever applicable.
+- Detailed description of function arguments, return types, and possible exceptions raised.
+
+This markdown format includes headings, links, and code blocks for clarity and organization.
