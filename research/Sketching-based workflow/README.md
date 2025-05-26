@@ -25,15 +25,15 @@ Before diving into the code, here is a high‐level overview of CountSketch with
    - **Mergeable:** You can add two sketches to get the sketch of the combined data.  
    - **Invertible (approx.):** You can approximately recover the original vector from its sketch.  
 
-4. **Other benefits:**  
-   - **Low memory footprint:** Stores only m numbers instead of n.  
-   - **Fast computation:** Hashing and summation are very cheap operations.  
-   - **Privacy boost:** Random signs and hashing obscure individual values.  
+4. **Other benefits:**  
+   - **Low memory footprint:** Stores only m numbers instead of n.  
+   - **Fast computation:** Hashing and summation are very cheap operations.  
+   - **Privacy boost:** Random signs and hashing obscure individual values.  
 
-5. **In SketchFL:**  
-   - We sketch both model weights and layer activations during training.  
-   - Server and clients exchange only the sketches, cutting bandwidth.  
-   - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
+5. **In SketchFL:**  
+   - We sketch both model weights and layer activations during training.  
+   - Server and clients exchange only the sketches, cutting bandwidth.  
+   - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
 
 
 ## Overview
