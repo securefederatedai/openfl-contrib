@@ -15,8 +15,11 @@ Before diving into the code, here is a high-level overview of CountSketch withou
 1. **Goal:** Reduce a long vector of numbers (length n) to a much shorter “sketch” (length m) so it’s faster to send over the network.
 
 2. **How it works:**  
-   - **Bucket assignment:** Each entry in the original vector is assigned to one of m buckets via a simple hash function.  
+
+   - **Bucket assignment:** Each entry in the original vector is assigned to one of m buckets via a simple hash function. 
+ 
    - **Random sign flip:** Before adding, each entry is multiplied by either +1 or –1 at random.  
+
    - **Bucket summation:** For each bucket, sum up all the signed values that were hashed there. The result is your sketch of length m.
 
 3. **Key properties:**  
