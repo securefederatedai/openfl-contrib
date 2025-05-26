@@ -12,8 +12,7 @@ SketchFL is a framework that applies CountSketch-based compression within federa
 
 Before diving into the code, here is a high‐level overview of CountSketch without heavy math:
 
-1. **Goal:**  
-   Reduce a long vector of numbers (length n) to a much shorter “sketch” (length m) so it’s faster to send over the network.  
+1. **Goal:** Reduce a long vector of numbers (length n) to a much shorter “sketch” (length m) so it’s faster to send over the network.  
 
 2. **How it works:**  
    - **Bucket assignment:** Each entry is assigned to one of m buckets via a hash.  
