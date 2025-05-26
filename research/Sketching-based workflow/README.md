@@ -12,7 +12,19 @@ SketchFL is a framework that applies CountSketch-based compression within federa
 
 <img src="DoubleBlindFL_Diagram.png" alt="SketchFL Diagram" width="60%"/>
 
-SketchFL shows how randomized numerical linear algebra techniques (CountSketch) integrate into federated learning experiments via OpenFL’s Workflow API. Included are:
+SketchFL shows how randomized numerical linear algebra techniques (CountSketch) integrate into federated learning experiments via OpenFL’s Workflow API. 
+
+### Aggregator
+1. Calculates sketched (aggregated) weights using `FedAvg` and broadcasts them along with the hash parameters.  
+2. At the beginning of each round, generates fresh hash parameters (i.e., sketching matrix S).  
+3. Never sees the full weights from the collaborators.
+
+### Collaborator
+1. Uses the hash parameters shared by the aggregator to compress the private input data.  
+2. Calculates sketched weights through local training using compressed weight gradients and shares with the server.  
+3. Never sees the full aggregated weights from the aggregator.
+
+Included are:
 
 - **Code Snippets:** Python modules for CountSketch utilities and a `SketchLinear` PyTorch layer.
 - **Notebook Examples:** Jupyter notebooks illustrating sketch-based federated learning on MNIST with an MLP.
