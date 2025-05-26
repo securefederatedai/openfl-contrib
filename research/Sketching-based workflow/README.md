@@ -10,7 +10,7 @@ SketchFL is a framework that applies CountSketch-based compression within federa
 
 ## Overview
 
-<img src="DoubleBlindFL_Diagram.png" alt="SketchFL Diagram" width="300"/>
+<img src="DoubleBlindFL_Diagram.png" alt="SketchFL Diagram" width="200"/>
 
 SketchFL shows how randomized numerical linear algebra techniques (CountSketch) integrate into federated learning experiments via OpenFL’s Workflow API. Included are:
 
