@@ -34,7 +34,7 @@ Before diving into the code, here is a high‐level (simplified) overview of Cou
    - Server and clients exchange only the sketches, cutting bandwidth.  
    - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
 
-For more details about CountSketch and other sketching techniques used in numerical linear algebra, please refer to the monograph<a href="https://arxiv.org/abs/1411.4357" target="_blank">[Woodruff, D.P., 2014]</a>.
+For more details about CountSketch and other sketching techniques used in numerical linear algebra, please refer to <a href="https://arxiv.org/abs/1411.4357" target="_blank">[Woodruff, D.P., 2014]</a>.
 
 
 ## Overview
