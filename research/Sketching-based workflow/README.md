@@ -8,6 +8,21 @@ Welcome to **SketchFL**, a research contribution to the OpenFL community. This p
 
 SketchFL is a framework that applies CountSketch-based compression within federated learning using OpenFL. By sketching model weights and activations in both forward and backward passes, SketchFL reduces communication bandwidth and computation time. We handle fractional compression ratios (q >= 1.0) and support gradient reconstruction via inverse sketching. Our evaluation on an MNIST classification task with a simple MLP architecture demonstrates that at q = 6, SketchFL maintains over 95% test accuracy while offering substantial speedups.
 
+## Sketching Primer
+
+CountSketch is a randomized linear projection that compresses a high-dimensional vector \(x \in \mathbb{R}^n\) into a lower-dimensional sketch \(s \in \mathbb{R}^m\) (with \(m \ll n\)) by hashing each coordinate of \(x\) into one of \(m\) buckets and multiplying by a random sign:
+1. **Hash indices** \(h: [n] \to [m]\): assigns each coordinate \(i\) to a bucket \(h(i)\).
+2. **Random signs** \(s_i \in \{-1, +1\}\): flips each coordinate’s sign with probability ½.
+3. **Sketch** \(y_j = \sum_{i: h(i)=j} s_i \, x_i\) for each bucket \(j\).
+
+Properties:
+- **Unbiased estimator:** \(\mathbb{E}[y_j] =\) sum of the original entries hashed to \(j\).
+- **Variance control:** Error decreases as \(m\) (the sketch size) increases.
+- **Linear:** You can merge sketches of two vectors simply by adding their sketches.
+
+In SketchFL, we apply CountSketch to both weights and activations (and invert it approximately during backprop) to drastically reduce computation and communication while retaining accuracy.
+
+
 ## Overview
 
 <img src="DoubleBlindFL_Diagram.png" alt="SketchFL Diagram" width="60%"/>
@@ -24,11 +39,11 @@ SketchFL shows how randomized numerical linear algebra techniques (CountSketch) 
 2. Calculates sketched weights through local training using compressed weight gradients and shares with the server.  
 3. Never sees the full aggregated weights from the aggregator.
 
-Included are:
+<!-- Included are:
 
 - **Code Snippets:** Python modules for CountSketch utilities and a `SketchLinear` PyTorch layer.
 - **Notebook Examples:** Jupyter notebooks illustrating sketch-based federated learning on MNIST with an MLP.
-- **Configuration Guides:** Instructions for integrating SketchFL into an OpenFL workflow.
+- **Configuration Guides:** Instructions for integrating SketchFL into an OpenFL workflow. -->
 
 > **Note:** Current examples focus on an MLP architecture on the MNIST dataset, demonstrating feasibility of sketch-based compression in federated learning.
 
