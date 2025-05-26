@@ -36,12 +36,12 @@ Generally, OpenFL's workflow interface can be run entirely as a Jupyter Notebook
 
 ## Citation
 
-If you find this project useful in your research, please consider citing our work:
+The core sketching methodology implemented in SketchFL is based on the following publication:
 ```latex
-@inproceedings{
-author={Your Name and Collaborators},
-title={Project Title},
-booktitle={Conference or Journal Name},
-year={Year},
-url={Link to publication}
-}
+@inproceedings{zhang2021matrix, 
+title={Matrix sketching for secure collaborative machine learning}, 
+author={Zhang, Mengjiao and Wang, Shusen}, 
+booktitle={International Conference on Machine Learning}, 
+pages={12589--12599}, 
+year={2021}, 
+organization={PMLR}}
