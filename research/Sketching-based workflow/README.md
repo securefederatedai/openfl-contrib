@@ -10,17 +10,30 @@ SketchFL is a framework that applies CountSketch-based compression within federa
 
 ## Sketching Primer
 
-CountSketch is a randomized linear projection that compresses a high-dimensional vector \(x \in \mathbb{R}^n\) into a lower-dimensional sketch \(s \in \mathbb{R}^m\) (with \(m \ll n\)) by hashing each coordinate of \(x\) into one of \(m\) buckets and multiplying by a random sign:
-1. **Hash indices** \(h: [n] \to [m]\): assigns each coordinate \(i\) to a bucket \(h(i)\).
-2. **Random signs** \(s_i \in \{-1, +1\}\): flips each coordinate’s sign with probability ½.
-3. **Sketch** \(y_j = \sum_{i: h(i)=j} s_i \, x_i\) for each bucket \(j\).
+Before diving into the code, here is a high‐level overview of CountSketch without heavy math:
 
-Properties:
-- **Unbiased estimator:** \(\mathbb{E}[y_j] =\) sum of the original entries hashed to \(j\).
-- **Variance control:** Error decreases as \(m\) (the sketch size) increases.
-- **Linear:** You can merge sketches of two vectors simply by adding their sketches.
+1. **Goal:**  
+   Reduce a long vector of numbers (length n) to a much shorter “sketch” (length m) so it’s faster to send over the network.  
 
-In SketchFL, we apply CountSketch to both weights and activations (and invert it approximately during backprop) to drastically reduce computation and communication while retaining accuracy.
+2. **How it works:**  
+   - **Bucket assignment:** Each entry is assigned to one of m buckets via a hash.  
+   - **Random sign flip:** Multiply each entry by +1 or –1 at random.  
+   - **Bucket summation:** Sum all signed values per bucket to form the sketch of length m.  
+
+3. **Key properties:**  
+   - **Unbiased:** On average, each sketch bucket equals the sum of its original entries.  
+   - **Mergeable:** You can add two sketches to get the sketch of the combined data.  
+   - **Invertible (approx.):** You can approximately recover the original vector from its sketch.  
+
+4. **Other benefits:**  
+   - **Low memory footprint:** Stores only m numbers instead of n.  
+   - **Fast computation:** Hashing and summation are very cheap operations.  
+   - **Privacy boost:** Random signs and hashing obscure individual values.  
+
+5. **In SketchFL:**  
+   - We sketch both model weights and layer activations during training.  
+   - Server and clients exchange only the sketches, cutting bandwidth.  
+   - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
 
 
 ## Overview
