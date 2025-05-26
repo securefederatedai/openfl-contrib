@@ -1,16 +1,22 @@
-# Federated Learning via Matrix Sketching
+# SketchFL: Federated Learning via Matrix Sketching
 
-Welcome to the [Project Title] repository, a research contribution to the OpenFL community. This project explores [briefly describe the focus of the research, e.g., a novel federated learning algorithm, application, or methodology] using OpenFL's experimental workflow interface. 
+Welcome to **SketchFL**, a research contribution to the OpenFL community. This project explores **integrating sketch-based compression into federated learning workflows**, using OpenFL's experimental Workflow API to accelerate both training and inference while reducing communication overhead. 
 
-> Note: This template is **not** intended to serve as a strict guideline. This is your space to showcase your awesome work and contribute back to the community. You should feel free to customize it as you see fit to best highlight your efforts!
+> **Note:** This document describes the SketchFL methodology and supplemental code. It is intended to showcase sketch-based FL research rather than serve as a standalone software package. Feel free to adapt the concepts and code snippets in your own experiments.
 
 ## Abstract
 
-[Provide a concise summary of the research, highlighting the main objectives, methods, and findings. This section should give readers a quick understanding of the project's significance and contributions.]
+We introduce SketchFL, a framework that applies CountSketch-based compression within federated learning using OpenFL. By sketching model weights and activations in both forward and backward passes, SketchFL reduces communication bandwidth and computation time. We handle fractional compression ratios (q >= 1.0) and support gradient reconstruction via inverse sketching. Our evaluation on an MNIST classification task with a simple MLP architecture demonstrates that at q = 6, SketchFL maintains over 98% test accuracy while offering substantial speedups.
 
 ## Overview
 
-The aim of this template is to provide a starting point for setting up your federated learning experiment and integrating your research into OpenFL. This repository serves as a space to host and showcase the innovative work you have been doing within the open-source community. Feel free to customize the workflow as needed, and consider implementing your own functionality or raising issues/requests for any features you find lacking. Our goal is to foster an outstanding framework for the research community and create an efficient pipeline to integrate research into the core OpenFL framework.
+SketchFL shows how randomized numerical linear algebra techniques (CountSketch) integrate into federated learning experiments via OpenFL’s Workflow API. Included are:
+
+- **Code Snippets:** Python modules for CountSketch utilities and a `SketchLinear` PyTorch layer.
+- **Notebook Examples:** Jupyter notebooks illustrating sketch-based federated learning on MNIST with an MLP.
+- **Configuration Guides:** Instructions for integrating SketchFL into an OpenFL workflow.
+
+> **Note:** Current examples focus on an MLP architecture on the MNIST dataset, demonstrating feasibility of sketch-based compression in federated learning.
 
 ## Running the Experiment
 
