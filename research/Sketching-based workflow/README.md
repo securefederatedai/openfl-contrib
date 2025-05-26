@@ -45,7 +45,7 @@ SketchFL shows how randomized numerical linear algebra techniques (CountSketch) 
 
 ### Aggregator
 1. Calculates sketched (aggregated) weights using `FedAvg` and broadcasts them along with the hash parameters.  
-2. At the beginning of each round, generates fresh hash parameters (i.e., sketching matrix S).  
+2. At the beginning of each round, generates fresh hash parameters.  
 3. Never sees the full weights from the collaborators.
 
 ### Collaborator
@@ -59,7 +59,7 @@ SketchFL shows how randomized numerical linear algebra techniques (CountSketch) 
 - **Notebook Examples:** Jupyter notebooks illustrating sketch-based federated learning on MNIST with an MLP.
 - **Configuration Guides:** Instructions for integrating SketchFL into an OpenFL workflow. -->
 
-> **Note:** Current examples focus on an MLP architecture on the MNIST dataset, demonstrating feasibility of sketch-based compression in federated learning.
+> **Note:** Current example focus on an MLP architecture on the MNIST dataset, demonstrating feasibility of sketch-based compression in federated learning.
 
 ## Running the Experiment
 
@@ -68,14 +68,6 @@ Generally, OpenFL's workflow interface can be run entirely as a Jupyter Notebook
 ## Results
 
 [Summarize the key findings of the research. You may want to include any relevant charts, graphs, or tables that illustrate the results. You may also provide links to additional resources or publications related to the project.]
-
-## License
-
-[Indicate any licenses]
-
-## Acknowledgments
-
-[Recognize any individuals, organizations, or funding sources that contributed to the research.]
 
 ## Citation
 
