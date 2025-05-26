@@ -10,7 +10,7 @@ SketchFL is a framework that applies CountSketch-based compression within federa
 
 ## Sketching Primer
 
-Before diving into the code, here is a high‐level overview of CountSketch without heavy math:
+Before diving into the code, here is a high‐level (simplified) overview of CountSketch without heavy math:
 
 1. **Goal:** Reduce a long vector of numbers (length n) to a much shorter “sketch” (length m) so it’s faster to send over the network.  
 
@@ -30,9 +30,11 @@ Before diving into the code, here is a high‐level overview of CountSketch with
    - **Privacy boost:** Random signs and hashing obscure individual values.  
 
 5. **In SketchFL:**  
-   - We sketch both model weights and layer activations during training.  
+   - We sketch both model weights and layer activations during training. 
    - Server and clients exchange only the sketches, cutting bandwidth.  
    - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
+
+For more details about CountSketch and other sketching techniques used in numerical linear algebra, please refer to the monograph<a href="https://arxiv.org/abs/1411.4357" target="_blank">[Woodruff, D.P., 2014]</a>.
 
 
 ## Overview
