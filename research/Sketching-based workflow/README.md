@@ -32,7 +32,7 @@ Before diving into the code, here is a high‐level (simplified) overview of Cou
 5. **In SketchFL:**  
    - We sketch both model weights and layer activations during training. 
    - Server and clients exchange only the sketches, cutting bandwidth.  
-   - An inverse‐sketch step recovers approximate gradients for full‐size weight updates.  
+   - An inverse‐sketch step recovers full-size model weights approximately.  
 
 For more details about CountSketch and other sketching techniques used in numerical linear algebra, please refer to <a href="https://arxiv.org/abs/1411.4357" target="_blank">[Woodruff, D.P., 2014]</a>.
 
