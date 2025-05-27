@@ -6,7 +6,7 @@ Welcome to **SketchFL**, a research contribution to the OpenFL community. This p
 
 ## Abstract
 
-SketchFL is a framework that applies CountSketch-based compression within federated learning using OpenFL. By sketching model weights and activations in both forward and backward passes, SketchFL reduces communication bandwidth and computation time. It handles compression ratio `q >= 1.0` and supports gradient reconstruction via inverse sketching. Our evaluation on an MNIST classification task with a simple MLP architecture demonstrates that at q = 6, SketchFL maintains over 95% test accuracy while offering substantial speedups.
+SketchFL is a framework that applies CountSketch-based compression within federated learning using OpenFL. By sketching model weights and activations in both forward and backward passes, SketchFL reduces communication bandwidth and computation time. It handles compression ratio `q >= 1.0` and supports gradient reconstruction via inverse sketching. Our evaluation on an MNIST classification task with a simple MLP architecture demonstrates that at q = 5, SketchFL maintains over 95% test accuracy while offering substantial speedups, with just 3 rounds of FL training.
 
 ## Sketching Primer
 
@@ -63,11 +63,11 @@ SketchFL shows how randomized numerical linear algebra techniques (CountSketch) 
 
 ## Running the Experiment
 
-Generally, OpenFL's workflow interface can be run entirely as a Jupyter Notebook, but you may wish to call out any special instructions, especially if you introduced any unique customizations.
+Run the notebook `Workflow_Interface_MLP_DoubleBlind.ipynb`.
 
-## Results
+<!-- ## Results
 
-[Summarize the key findings of the research. You may want to include any relevant charts, graphs, or tables that illustrate the results. You may also provide links to additional resources or publications related to the project.]
+[Summarize the key findings of the research. You may want to include any relevant charts, graphs, or tables that illustrate the results. You may also provide links to additional resources or publications related to the project.] -->
 
 ## Citation
 
