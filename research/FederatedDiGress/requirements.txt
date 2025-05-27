@@ -1,7 +1,5 @@
-dill==0.3.6
 imageio==2.34.2
 matplotlib==3.9.0
-metaflow==2.7.15
 networkx==2.8.7
 omegaconf==2.3.0
 pandas==2.2.2
