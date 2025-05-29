@@ -7,7 +7,6 @@ import torch.nn.functional as F
 import pytorch_lightning as pl
 import time
 # import wandb
-import os
 import tqdm
 
 from digress.models.transformer_model import GraphTransformer
@@ -257,7 +256,7 @@ class DiscreteDenoisingDiffusion(pl.LightningModule):
         nll = self.compute_val_loss(pred, noisy_data, dense_data.X, dense_data.E, data.y, node_mask, test=True)
 
         self.log_dict({'test loss': nll}, on_epoch=True)
-        
+
         return {'loss': nll}
 
     # def on_test_epoch_end(self) -> None:

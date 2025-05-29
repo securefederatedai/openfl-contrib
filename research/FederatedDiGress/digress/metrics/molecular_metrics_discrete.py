@@ -195,4 +195,3 @@ class TrainMolecularMetricsDiscrete(nn.Module):
             epoch_bond_metrics[key] = val.item()
 
         return epoch_atom_metrics, epoch_bond_metrics
-

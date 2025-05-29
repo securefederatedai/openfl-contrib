@@ -21,10 +21,10 @@ python train.py
 
 ## Running the federated workspace
 
-The first step is to install OpenFL (v1.6 from PyPi being the latest release as of the time of writing):
+The first step is to install OpenFL (v1.8 from PyPi being the latest release as of the time of writing):
 ```bash
 cd ./federated
-pip install openfl==1.6
+pip install openfl==1.8
 ```
 
 Initialize the workspace and prepare the dataset shards:

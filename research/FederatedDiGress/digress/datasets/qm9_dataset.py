@@ -4,7 +4,6 @@
 import hashlib
 import os
 import os.path as osp
-import pathlib
 from typing import Any, Sequence
 
 import torch
@@ -259,7 +258,7 @@ class QM9DataModule(MolecularDataModule):
                     datasets = {'train': datasets['train'][len(datasets['train'])//2:],
                                 'val': datasets['val'][len(datasets['val'])//2:],
                                 'test': datasets['test']}
-                
+
                 else:
                     raise ValueError("Max. collabs = 2")
             else:
