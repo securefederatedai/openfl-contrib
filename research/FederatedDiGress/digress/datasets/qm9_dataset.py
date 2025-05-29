@@ -4,7 +4,6 @@
 import hashlib
 import os
 import os.path as osp
-pass
 from typing import Any, Sequence
 
 import torch

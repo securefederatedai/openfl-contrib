@@ -375,9 +375,7 @@ class AromaticMSE(MSEPerClass):
 
 class AtomMetrics(MetricCollection):
     def __init__(self, dataset_infos):
-        dataset_infos.remove_h
         self.atom_decoder = dataset_infos.atom_decoder
-        len(self.atom_decoder)
 
         types = {'H': 0, 'C': 1, 'N': 2, 'O': 3, 'F': 4, 'B': 5, 'Br': 6,
                  'Cl': 7, 'I': 8, 'P': 9, 'S': 10, 'Se': 11, 'Si': 12}

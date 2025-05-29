@@ -7,7 +7,6 @@ import torch.nn.functional as F
 import pytorch_lightning as pl
 import time
 # import wandb
-pass
 import tqdm
 
 from digress.models.transformer_model import GraphTransformer

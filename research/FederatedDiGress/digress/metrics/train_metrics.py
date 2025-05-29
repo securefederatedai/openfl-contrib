@@ -5,7 +5,6 @@ import torch
 from torch import Tensor
 import torch.nn as nn
 from torchmetrics import Metric, MeanSquaredError, MetricCollection
-pass
 # import wandb
 from digress.metrics.abstract_metrics import SumExceptBatchMetric, SumExceptBatchMSE, SumExceptBatchKL, \
     CrossEntropyMetric, ProbabilityMetric, NLL

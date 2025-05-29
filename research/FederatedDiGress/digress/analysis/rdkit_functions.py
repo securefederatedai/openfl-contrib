@@ -226,7 +226,6 @@ def correct_mol(m):
         else:
             assert len(atomid_valence) == 2
             idx = atomid_valence[0]
-            atomid_valence[1]
             queue = []
             check_idx = 0
             for b in mol.GetAtomWithIdx(idx).GetBonds():

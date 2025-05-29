@@ -524,8 +524,6 @@ class DiscreteDenoisingDiffusion(pl.LightningModule):
         #self.guidance_model.eval()
         loss = nn.MSELoss()
 
-        noisy_data['t']
-
         X = noisy_data['X_t']
         E = noisy_data['E_t']
         y = noisy_data['t']
@@ -541,7 +539,6 @@ class DiscreteDenoisingDiffusion(pl.LightningModule):
             # mse = loss(pred.y, target.repeat(pred.y.size(0), 1))
 
             if pred.y.size(0) > target.size(0):
-                pred.y.size(0) - target.size(0)
                 repeats = pred.y.size(0) // target.size(0)
                 additional = pred.y.size(0) % target.size(0)
                 target_padded = torch.cat([target.repeat(repeats, 1), target[:additional]], dim=0)
