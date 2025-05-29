@@ -138,10 +138,10 @@ class SamplingMolecularMetrics(nn.Module):
             target_probability = self.valency_target_dist[valency]
             to_log[f'molecular_metrics/valency_{valency}_dist'] = (generated_probability - target_probability).item()
 
-        n_mae = self.n_dist_mae.compute()
-        node_mae = self.node_dist_mae.compute()
-        edge_mae = self.edge_dist_mae.compute()
-        valency_mae = self.valency_dist_mae.compute()
+        self.n_dist_mae.compute()
+        self.node_dist_mae.compute()
+        self.edge_dist_mae.compute()
+        self.valency_dist_mae.compute()
 
         # if wandb.run:
         #     wandb.log(to_log, commit=False)
@@ -157,7 +157,7 @@ class SamplingMolecularMetrics(nn.Module):
 
         if local_rank == 0:
             print("Custom metrics computed.")
-            os.makedirs(os.path.join(cfg.dataset.datadir,'graphs',name), exist_ok = True) 
+            os.makedirs(os.path.join(cfg.dataset.datadir,'graphs',name), exist_ok = True)
             valid_unique_molecules = rdkit_metrics[1]
             textfile = open(f'{cfg.dataset.datadir}/graphs/{name}/valid_unique_molecules_e{current_epoch}_b{val_counter}.txt', "w")
             textfile.writelines(valid_unique_molecules)
@@ -375,9 +375,9 @@ class AromaticMSE(MSEPerClass):
 
 class AtomMetrics(MetricCollection):
     def __init__(self, dataset_infos):
-        remove_h = dataset_infos.remove_h
+        dataset_infos.remove_h
         self.atom_decoder = dataset_infos.atom_decoder
-        num_atom_types = len(self.atom_decoder)
+        len(self.atom_decoder)
 
         types = {'H': 0, 'C': 1, 'N': 2, 'O': 3, 'F': 4, 'B': 5, 'Br': 6,
                  'Cl': 7, 'I': 8, 'P': 9, 'S': 10, 'Se': 11, 'Si': 12}

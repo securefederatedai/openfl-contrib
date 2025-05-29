@@ -5,7 +5,7 @@ import torch
 from torch import Tensor
 import torch.nn as nn
 from torchmetrics import Metric, MeanSquaredError, MetricCollection
-import time
+pass
 # import wandb
 from digress.metrics.abstract_metrics import SumExceptBatchMetric, SumExceptBatchMSE, SumExceptBatchKL, \
     CrossEntropyMetric, ProbabilityMetric, NLL
@@ -124,6 +124,3 @@ class TrainLossDiscrete(nn.Module):
         #     wandb.log(to_log, commit=False)
 
         return to_log
-
-
-

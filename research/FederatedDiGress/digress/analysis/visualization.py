@@ -75,7 +75,7 @@ class MolecularVisualization:
         if num_molecules_to_visualize > len(molecules):
             print(f"Shortening to {len(molecules)}")
             num_molecules_to_visualize = len(molecules)
-        
+
         for i in range(num_molecules_to_visualize):
             file_path = os.path.join(path, 'molecule_{}.png'.format(i))
             mol = self.mol_from_graphs(molecules[i][0].numpy(), molecules[i][1].numpy())
@@ -193,7 +193,7 @@ class NonMolecularVisualization:
             file_path = os.path.join(path, 'graph_{}.png'.format(i))
             graph = self.to_networkx(graphs[i][0].numpy(), graphs[i][1].numpy())
             self.visualize_non_molecule(graph=graph, pos=None, path=file_path)
-            im = plt.imread(file_path)
+            plt.imread(file_path)
             # if wandb.run and log is not None:
             #     wandb.log({log: [wandb.Image(im, caption=file_path)]})
 

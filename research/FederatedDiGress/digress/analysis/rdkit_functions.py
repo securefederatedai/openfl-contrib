@@ -8,7 +8,7 @@ import re
 try:
     from rdkit import Chem
     print("Found rdkit, all good")
-except ModuleNotFoundError as e:
+except ModuleNotFoundError:
     use_rdkit = False
     from warnings import warn
     warn("Didn't find rdkit, this will fail")
@@ -226,7 +226,7 @@ def correct_mol(m):
         else:
             assert len(atomid_valence) == 2
             idx = atomid_valence[0]
-            v = atomid_valence[1]
+            atomid_valence[1]
             queue = []
             check_idx = 0
             for b in mol.GetAtomWithIdx(idx).GetBonds():
