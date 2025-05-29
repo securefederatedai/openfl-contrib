@@ -109,9 +109,9 @@ class AbstractDatasetInfos:
         If no datamodule is provided, the function will use the provided cfg to set the dimensions.
 
         Args:
-            datamodule: An instance that provides access to the data loaders. [optional] 
-            extra_features: A callable that computes additional features for the input data. [optional] 
-            domain_features: A callable that computes domain-specific features for the input data. [optional] 
+            datamodule: An instance that provides access to the data loaders. [optional]
+            extra_features: A callable that computes additional features for the input data. [optional]
+            domain_features: A callable that computes domain-specific features for the input data. [optional]
             cfg: A configuration object that contains model information [optional]
             regressor: A boolean flag indicating whether a regressor is being used (default False).
 
